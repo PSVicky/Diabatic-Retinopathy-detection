@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js">
+        </script>
+    <script>
+        // var button = document.getElementById("button");
+        function myfunction() {
+        var doc = new jsPDF("p", "mm", [290, 297]);
+        var makePDF = document.querySelector("#makepdf");
+        doc.fromHTML(makePDF);
+        doc.save("output.pdf");
+};
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/report.css">
+</head>
+<body>
+    <div class="report_content" id="makepdf">
+        <div class="header">
+            <i class="fa fa-eye"></i>
+            <div class="content">
+                <h3>DR <span> DETECTION</span></h3>
+                <h5 class="sub_head">DOCTOR NAME:</h5>
+            </div>
+        </div>
+        <div class="patient_content">
+            <table>
+                <tr>
+                    <th>NAME :</th>
+                    <td>{name}</td>
+                </tr>
+                <tr>
+                    <th>AGE :</th>
+                    <td>{age}</td>
+                </tr>
+                <tr>
+                    <th>SEX :</th>
+                    <td>{sex}</td>
+                </tr>
+                <tr>
+                    <th>PHONE :</th>
+                    <td>{phone}</td>
+                </tr>
+                <tr>
+                    <th>STAGE:</th>
+                    <td>{stage}</td>
+                </tr>
+            </table>
+           
+        </div>
+    </div>
+    <button class="download" onclick='myfunction()'id = "button">Download Report</button>
+    <a href="http://">Mail Report To patient</a>
+</body>
+</html>
