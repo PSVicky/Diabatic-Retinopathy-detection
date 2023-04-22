@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js"></script>
+</head> 
+<body>
+    <section class="navbar">
+        <div class="container">
+            <div class="icon">
+                <h3>DR <span>Detection</span></h3>
+            </div>
+            <ul class="nav_content">
+                <li>
+                    <a href="http://">Home</a>
+                    <a href="http://">About</a>
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                    <a href="/Register">Register</a>
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+   
+ 
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <h3>Login</h3>
+        
+        <form class="animate" method="POST" action="/">
+            <div class="modal_group">
+                <label for="email">Email :</label><br>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="modal_group">
+                <label for="email">Password :</label><br>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="remember_modal">
+                <label for="checkbox">
+                    <input type="checkbox" name="remember" id="remember_me"> remember_me<br>
+                </label>
+
+                
+            </div>
+            <div class="modal_group">
+                <input type="submit" value="Login">
+                <div class="register_page_nav">
+                    <p>Don't Have an account<a href="/Register">Register</a></p>
+                <p onclick="document.getElementById('id01').style.display='none'" class="close_btn">Close</p>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+ 
+   
+</body>
+ 
+</html>
